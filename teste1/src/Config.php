@@ -3,7 +3,7 @@
 /**
  * constante com a rota raiz onde o projeto esta rodando
  */
-define("ROOT", "http://192.168.1.9/houpa-teste/teste1");
+define("ROOT", "http://localhost/houpa-teste/teste1");
 
 /**
  * constante com dados de configuracao do componente DataLayer 
