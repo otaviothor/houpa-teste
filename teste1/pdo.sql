@@ -1,0 +1,20 @@
+CREATE DATABASE empresa;
+USE empresa;
+
+CREATE TABLE setor (
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(255) NOT NULL,
+  PRIMARY KEY(id)
+);
+
+CREATE TABLE funcionario (
+  id INT NOT NULL AUTO_INCREMENT,
+  nome VARCHAR(255) NOT NULL,
+  sexo CHAR(1) NOT NULL,
+  tipo_sangue VARCHAR(5) NOT NULL,
+  telefone VARCHAR(50) NOT NULL,
+  id_setor INT(3) NOT NULL,
+  PRIMARY KEY(id),
+  FOREIGN KEY (id_setor) REFERENCES setor(id) ON DELETE CASCADE
+);
+

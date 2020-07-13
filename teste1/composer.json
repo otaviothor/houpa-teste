@@ -1,0 +1,25 @@
+{
+  "name": "otaviothor/pdo-php",
+  "description": "TRABALHO DE PW II SOBRE PDO",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Otávio Barreto de Oliveira Silva",
+      "email": "otaviosilva2632@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Src\\": "src/"
+    },
+    "files": [
+      "src/Config.php"
+    ]
+  },
+  "require": {
+    "coffeecode/datalayer": "1.1.*",
+    "coffeecode/router": "1.0.*",
+    "league/plates": "v4.0.0-alpha"
+  }
+}
