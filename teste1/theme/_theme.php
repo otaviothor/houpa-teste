@@ -14,19 +14,6 @@
 
 <body>
 
-    <!-- <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="#">Navbar fixa</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse show" id="navbarCollapse" style="">
-            <form class="form-inline mt-2 mt-md-0 ml-auto">
-                <input class="form-control mr-sm-2" type="text" placeholder="Pesquisa" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-            </form>
-        </div>
-    </nav> -->
-
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand link-highlight" href="<?= $router->route("web.home"); ?>">
