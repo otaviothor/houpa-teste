@@ -9,10 +9,10 @@
 	<div class="row">
 		<div class="col-md-4 order-md-2 mb-4">
 			<div class="card shadow">
-				<img class="card-img-top" src="https://via.placeholder.com/150x100" alt="">
+				<img class="card-img-top" src="<?= isset($product->image_url) ? upload("/{$product->image_url}") : "https://via.placeholder.com/150x100" ?>" alt="">
 				<div class="card-body">
-					<h5 class="card-title">Nome do produto</h5>
-					<p class="card-text text-muted">R$ <span class="card-price">189,99</span></p>
+					<h5 class="card-title"><?= $product->name ?? 'Nome do produto' ?></h5>
+					<p class="card-text text-muted">R$ <span class="card-price"><?= $product->price ?? '189,99' ?></span></p>
 				</div>
 			</div>
 		</div>
@@ -21,7 +21,7 @@
 				<div class="row">
 					<div class="col-12 col-sm-12 mb-3">
 						<label for="name">Nome do produto</label>
-						<input type="text" class="form-control name" id="name" name="name" placeholder="Blusa Nike SB" />
+						<input type="text" class="form-control name" id="name" name="name" placeholder="Blusa Nike SB" value="<?= $product->name ?? '' ?>" />
 					</div>
 				</div>
 
@@ -44,18 +44,18 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text">R$</span>
 							</div>
-							<input type="text" class="form-control price" id="price" placeholder="189,99" name="price" data-mask="000.000,00" data-mask-reverse="true" />
+							<input type="text" class="form-control price" id="price" placeholder="189,99" name="price" data-mask="000.000,00" data-mask-reverse="true" value="<?= $product->price ?? '' ?>" />
 						</div>
 					</div>
 				</div>
 
 				<div class="mb-3">
 					<label for="description">Descrição do produto</label>
-					<textarea class="form-control" id="description" rows="5" name="description"></textarea>
+					<textarea class="form-control" id="description" rows="5" name="description"><?= $product->description ?? '' ?></textarea>
 				</div>
 
 				<hr class="mb-4">
-				<button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Cadastrar produto</button>
+				<button class="btn btn-primary btn-lg btn-block mb-5" type="submit"><?= $buttonTitle ?></button>
 			</form>
 		</div>
 	</div>
@@ -65,7 +65,7 @@
 $v->start("js");
 ?>
 <script>
-	function imagePreview(select) {
+	const imagePreview = (select) => {
 		if (select.value) {
 			$('.card-img-top').attr('src', `uploads/${select.value}`);
 		}
