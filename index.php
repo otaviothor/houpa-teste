@@ -24,7 +24,7 @@ $route->namespace("Src\Controllers");
 $route->group(null);
 $route->get("/", "Web:home", "web.home");
 $route->get("/{id}", "Web:show", "web.show");
-$route->get("/{id}/editar", "Web:showForm", "web.showFormEdit");
+$route->get("/{id}/editar", "Web:showFormEdit", "web.showFormEdit");
 $route->post("/excluir", "Web:delete", "web.delete");
 $route->get("/novo", "Web:showForm", "web.showForm");
 $route->post("/criar", "Web:create", "web.create");

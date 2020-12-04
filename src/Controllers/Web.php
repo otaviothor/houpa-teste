@@ -64,30 +64,12 @@ class Web
    * funcao utilizada para renderizar o template form
    * utilizado para realizar um novo cadastro de produto
    */
-  public function showForm(array $data)
+  public function showForm()
   {
-    if ($data['id']) {
-      $product = (new Product())->findById($data["id"]);
-
-      if ($product) {
-        echo $this->view->render("form", [
-          "title" => "Editar produto",
-          "subtitle" => "Preencha os dados abaixo.",
-          "buttonTitle" => "Salvar produto.",
-          "product" => $product
-        ]);
-      } else {
-        echo $this->view->render("error", [
-          "error" => "Produto não encontrado"
-        ]);
-      }
-    } else {  
-      echo $this->view->render("form", [
-        "title" => "Cadastrar de produto",
-        "subtitle" => "Preencha os dados abaixo.",
-        "buttonTitle" => "Cadastrar produto.",
-        ]);
-    }
+    echo $this->view->render("form", [
+      "title" => "Cadastrar de produto",
+      "subtitle" => "Preencha os dados abaixo.",
+    ]);
   }
 
   /**
